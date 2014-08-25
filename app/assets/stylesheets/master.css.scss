@@ -18,3 +18,26 @@ body {
   margin-bottom: 15px;
   padding: 20px;
 }
+
+.navbar.navbar-inverse {
+  /*background:url('/assets/tweed.png');*/
+  border-radius: 0;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  margin-bottom: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #DCE8E7;
+  /*font-family: 'chunkfiveroman', sans-serif;*/
+  font-size: 26px;
+}
+
+.hero {
+ background: url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:500px;
+  box-shadow: 0px 3px 8px #2a2a2a;
+}

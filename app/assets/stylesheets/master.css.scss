@@ -1,0 +1,42 @@
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+body {
+  background: url('/assets/notebook.png');
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  /*background-color: black;*/
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top:10px;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.navbar.navbar-inverse {
+  border-radius: 0;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  margin-bottom: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #DCE8E7;
+
+  font-size: 26px;
+}
+
+.hero {
+ background: url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:500px;
+  box-shadow: 0px 3px 8px #2a2a2a;
+}

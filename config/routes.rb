@@ -3,6 +3,8 @@ Examgoose::Application.routes.draw do
   devise_for :users
   root 'static_pages#index'
   get 'welcome' => 'static_pages#welcome'
+  get 'thankyou' => 'static_pages#thankyou'
+
   resources :users, :only => :show
 
   resources :optins

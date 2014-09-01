@@ -9,7 +9,7 @@ class OptinsController < ApplicationController
 		@optin = Optin.create(optin_params)
 
 		# if @optin.valid?
-			redirect_to root_path
+			redirect_to thankyou_path
 		# else
 		# 	render :new, :status => :unprocessable_entity
 		# end

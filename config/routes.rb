@@ -5,6 +5,8 @@ Examgoose::Application.routes.draw do
   get 'welcome' => 'static_pages#welcome'
   resources :users, :only => :show
 
+  resources :optins
+
   namespace :admin do
     resources :interviews
   end

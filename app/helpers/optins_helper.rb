@@ -1,0 +1,2 @@
+module OptinsHelper
+end

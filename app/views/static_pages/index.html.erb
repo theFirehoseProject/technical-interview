@@ -26,7 +26,17 @@
 
 	<div class="sign-up col-xs-4 col-xs-offset-4 text-center">
 		<h2>Get started</h2>
-		<h3><%= link_to "Sign up for free", new_user_registration_path, :class => "btn btn-primary btn-lg" %></h3>
+    <form class="form-inline" role="form" _lpchecked="1">
+      <%= simple_form_for Optin.new do |f| %>
+        
+          <%= f.input :name %>
+          <%= f.input :email %>
+        
+        <%= f.submit 'Get notified', :class => 'btn btn-success' %>
+      <% end %>
+    </form>
+    
+
 	</div>
 
 </div>

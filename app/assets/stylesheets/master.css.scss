@@ -5,6 +5,37 @@
 @import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
 
 
+.hero h1, .hero h2 {
+  color:white;
+}
+
+.sign-up {
+  background-color:#2B343E;
+  margin-top:100px;
+}
+.hero h1 {
+  margin-top:0; 
+  padding-top:100px; 
+  font-family: 'Lato', sans-serif; 
+  font-size:60px;
+}
+
+.about {
+  background-color:#312F35; 
+  color:white;
+  padding-top:100px;
+  padding-bottom: 100px;
+}
+
+.features {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+main {
+  margin-bottom:100px;
+}
+
 body {
   background: url('/assets/notebook.png');
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;

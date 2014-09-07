@@ -2,6 +2,8 @@
 @import "bootstrap-sprockets";
 @import url(http://fonts.googleapis.com/css?family=Raleway:700);
 @import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
+
 
 body {
   background: url('/assets/notebook.png');
@@ -26,6 +28,8 @@ body {
   border-radius: 0;
   box-shadow: 0px 1px 3px #2a2a2a;
   margin-bottom: 0px;
+  background-color:#0B486B;
+  border:none;
 }
 
 .navbar-inverse .navbar-brand {
@@ -35,7 +39,7 @@ body {
 }
 
 .hero {
- background: url('hero.jpg') no-repeat center center fixed;
+background: linear-gradient(rgba(11,72,107, 0.9), rgba(11,72,107, 0.8)), url(hero.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -60,8 +64,26 @@ body {
   padding: 20px 0px 20px 0px;
 }
 
+.hero h2 {
+font-family: 'Fira Sans', sans-serif;
+}
+
+.about h3 {
+font-family: 'Fira Sans', sans-serif;
+font-weight:300;
+line-height:35px;
+}
+.features h3 {
+  font-family: 'Fira Sans', sans-serif;
+font-weight:500;
+font-size:25px;
 
 
+}
+
+.features p {
+  color: #666;
+}
 .course-head h2{
   font-family: 'Lato', sans-serif;
   font-size: 35px;
@@ -116,4 +138,82 @@ body {
 .form-box label {
     display: block;
     margin: 0px 0px 5px;
+}
+
+
+.hero h1, .hero h2 {
+  text-shadow: rgba(0,0,0,0.95) 1px 1px;
+}
+
+.btn-success {
+  background-color:#3B8686;
+  border-color:#3B8686;
+  border-radius:0;
+    font-family: 'Fira Sans', sans-serif;
+font-weight:100;
+font-size:30px;
+
+}
+input {
+      font-family: 'Fira Sans', sans-serif;
+font-weight:100;
+
+}
+
+.sign-up h2 {
+  color:white;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight:500;
+  margin-top:40px;
+}
+
+.sign-up p {
+  color:#ddd;
+  font-size:18px;
+    margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+.btn-success:hover {
+  background-color:#3E4B59;
+  border-color:#2B343E;
+}
+
+
+
+
+
+
+$footer-height: 100px;
+
+
+
+/* Set the fixed height of the footer here */
+#footer {
+  height:$footer-height;
+  color:white;
+  background-color: rgba(36,32,33,0.9);
+  font-family: "Helvetica Neue",Helvetica;
+  padding:10px 0px;
+  font-weight:100;
+}
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
+
+#footer a {
+  color:white;
+  font-weight:100;
+}
+
+.social img {
+  height:25px;
+  margin-left:10px;
 }

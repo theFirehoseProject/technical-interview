@@ -1,8 +1,8 @@
 class CreateOptins < ActiveRecord::Migration
   def change
-    
-  	add_column :optins, :name, :string
-  	add_column :optins, :email, :string
-    
+	  create_table "optins", force: true do |t|
+	    t.string "name"
+	    t.string "email"
+	  end    
   end
 end

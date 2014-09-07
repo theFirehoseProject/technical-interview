@@ -1,3 +1,5 @@
+
+
 <div class="hero">
 </div>
 
@@ -5,42 +7,37 @@
 
 <div class="col-xs-10 col-xs-offset-1 features text-center">
   <div class="col-sm-4">
-    <h3>Test your knowldge</h3>
-    Bla bla <br />
-    bla bla
+    <h3>Test your knowledge</h3>
+    Get ready for your technical interview with curated questions for the subject of your choosing. <br />
   </div>
 
   <div class="col-sm-4">
     <h3>Real interview problems</h3>
-    Bla bla <br />
-    bla bla
+    Interview questions that commonly show up in your selected interview type, and  how to nail them.<br />
   </div>
 
   <div class="col-sm-4">
-    <h3>Feature 3</h3>
-    Bla bla <br />
-    bla bla
+    <h3>Your First Set Free</h3>
+    The first set of questions are free, and you have the option to unlock more for just $5.
   </div>
 
 	<br class="clr" />
 
-	<div class="sign-up col-xs-8 col-xs-offset-2 text-center">
-		<h2>Get started</h2>
-    
-    <%= simple_form_for Optin.new do |f| %>
-      <div class="simple_form form-inline">    
-        <div class="form-group">
-          <%= f.input :name, placeholder: 'Name', label: false %>
+  	<div class="sign-up col-xs-8 col-xs-offset-2 text-center">
+  		<h2>Get started</h2>
+
+      <%= simple_form_for Optin.new do |f| %>
+        <div class="simple_form form-inline">
+          <div class="form-group">
+            <%= f.input :name, placeholder: 'Name', label: false %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :email, :placeholder => 'Email', label: false %>
+          </div>
+
+          <%= f.submit 'Get notified', :class => 'btn btn-success btn-sm' %>
         </div>
-        
-        <div class="form-group">
-          <%= f.input :email, :placeholder => 'Email', label: false %>
-        </div>
-
-        <%= f.submit 'Get notified', :class => 'btn btn-success btn-sm' %>
-      </div>
-    <% end %>        
-
-	</div>
-
+      <% end %>
+  	</div>
 </div>

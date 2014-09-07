@@ -1,17 +1,36 @@
-<h2>Sign in</h2>
+<div class="form-box col-xs-4 col-xs-offset-4">
+<h1>Sign in <%= resource_name.to_s.humanize %></h1>  <!-- <h1>Sign in</h1> -->
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+<div class="form-group">
+<label>
+  <div><%= f.label :email %>
   <%= f.email_field :email, autofocus: true %></div>
+</label>
+</div>
 
-  <div><%= f.label :password %><br />
+<div class="form-group">
+<label>
+  <div><%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %></div>
+</label>
+</div>
 
+<ul class="list-inline">
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <li><%= f.check_box :remember_me %></li>
+    <li><%= f.label :remember_me %></li>
+</ul>
   <% end -%>
 
+
+
+<div class="form-group">
+<label>
   <div><%= f.submit "Sign in" %></div>
+</label>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>

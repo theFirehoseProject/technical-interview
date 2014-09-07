@@ -1,0 +1,35 @@
+
+//devise forms
+
+.form-box {
+    float: none;
+    margin: 0 auto;
+    top: 50px;
+    background: #FFF;
+    padding: 20px 30px 20px 30px;
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 1px #FFF;
+    border:1px solid #DDD;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.form-box span{
+    color: #888;
+}
+
+.form-box h1 {
+    font: 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom: 1px solid #DADADA;
+    margin: -10px -30px 30px -30px;
+    color: #888;
+}
+
+.form-box label {
+    display: block;
+    margin: 0px 0px 5px;
+}

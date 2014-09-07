@@ -15,3 +15,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+<script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 5000);
+ })
+</script>

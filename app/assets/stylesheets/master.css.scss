@@ -1,5 +1,16 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
+@import url(http://fonts.googleapis.com/css?family=Raleway:700);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
+
+.clr {
+  clear:both;
+}
+
+main {
+  margin-bottom:100px;
+}
 
 body {
   background: url('/assets/notebook.png');
@@ -14,37 +25,45 @@ body {
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-  margin-top:10px;
-  margin-bottom: 15px;
+  top: 20px;
+  margin:20px 0px 15px 0px;
   padding: 20px;
 }
 
-.navbar.navbar-inverse {
-  border-radius: 0;
-  box-shadow: 0px 1px 3px #2a2a2a;
-  margin-bottom: 0px;
+.course-head h2{
+  font-family: 'Lato', sans-serif;
+  font-size: 35px;
 }
 
-.navbar-inverse .navbar-brand {
-  color: #DCE8E7;
+.courses{
+  font-family: 'Lato', sans-serif;
+  font-size: 35px;
+  border: 3px solid #7f8c8d;
+  background-color: #95a5a6;
+  margin-top: 40px;
 
-  font-size: 26px;
 }
 
-.hero {
- background: url('hero.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height:450px;
-  box-shadow: 0px 3px 8px #2a2a2a;
+.courses h3{
+  margin: 20px 0px 20px 0px;
 }
 
-.clr {
-  clear:both;
+
+.btn-success {
+  background-color:#3B8686;
+  border-color:#3B8686;
+  border-radius:0;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight:100;
+  font-size:30px;
 }
 
-.sign-up {
-  margin-top: 15px;
+.btn-success:hover {
+  background-color:#3E4B59;
+  border-color:#2B343E;
+}
+
+input {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight:100;
 }

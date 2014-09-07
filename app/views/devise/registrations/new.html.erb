@@ -1,18 +1,32 @@
-<h2>Sign up</h2>
+<div class="form-box col-xs-4 col-xs-offset-4">
+<h1>Sign Up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+<div class="form-group">
+<label>
+  <div><%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %></div>
+</label>
+</div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :password %><br />
+<div class="form-group">
+<label>
+  <div><%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %></div>
+</label>
+</div>
 
-  <div><%= f.label :password_confirmation %><br />
+<div class="form-group">
+<label>
+  <div><%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+</label>
+</div>
 
-  <div><%= f.submit "Sign up" %></div>
+<ul class="list-inline">
+<li><%= f.submit "Sign up" %></li>
+<li><%= button_to "Sign in", new_session_path(resource_name) %></li><br />
+</ul>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -5,14 +5,14 @@ class OptinsController < ApplicationController
 	end
 
 	def create
-		# render plain: params[:optin].inspect
+		 #render plain: params[:optin].inspect
 		@optin = Optin.create(optin_params)
 
-		# if @optin.valid?
+		 #if @optin.valid?
 			redirect_to thankyou_path
-		# else
-		# 	render :new, :status => :unprocessable_entity
-		# end
+		 #else
+		 #render :new, :status => :unprocessable_entity
+		 #end
 	end
 
 	private

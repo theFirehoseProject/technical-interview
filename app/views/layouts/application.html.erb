@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
+
 <script type="text/javascript">
 $(document).ready(function(){
   setTimeout(function(){
@@ -18,6 +19,9 @@ $(document).ready(function(){
 
 <body>
 
+
+<body class="Site">
+  <main class="Site-content">
 	<div id="container">
 		<%= render :partial => "layouts/header" %>
 
@@ -36,6 +40,11 @@ $(document).ready(function(){
 
 
 	<%= yield %>
+
+</main>
+
+
+<%= render :partial => 'layouts/footer' %>
 
 </body>
 </html>

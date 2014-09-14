@@ -4,7 +4,7 @@ Examgoose::Application.routes.draw do
   root 'static_pages#index'
   get 'welcome' => 'static_pages#welcome'
   get 'thankyou' => 'static_pages#thankyou'
-  get 'admin' => 'static_pages#admin'
+  
 
   resources :users, :only => :show
 
@@ -12,6 +12,7 @@ Examgoose::Application.routes.draw do
 
   namespace :admin do
     resources :interviews
+    resource :dashboard, :only => :show
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

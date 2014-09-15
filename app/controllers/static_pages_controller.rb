@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 
   def index
     if current_user.present? && current_user.admin?
-      redirect_to admin_path
+      redirect_to admin_dashboard_path
       elsif current_user.present?
       redirect_to welcome_path
     end

@@ -1,0 +1,7 @@
+<%= simple_form_for @question do |q| %>
+  <%= q.input :topic, :label => "Topic id", :placeholder => "bla" %>
+	<%= q.input :problem, :label => "Enter question here?" %>
+	<%= q.input :solution, :label => "Enter the right answer" %>
+  
+  <%= q.submit 'Create', :class => 'btn btn-danger' %>
+<% end %>

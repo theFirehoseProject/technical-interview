@@ -16,7 +16,12 @@
             </div>
             <div class="tab-pane active" id="questions">
                 <br />
-                    <button type="button" class="btn btn-danger">New question</button>
+        
+                    <button type="button" class="btn btn-danger", >
+                        <%= link_to 'New question', '#', :data => {:toggle => 'modal', :target => '#myModal'} %>
+                    </button>
+
+                    <%= render :partial => "layouts/new_question" %>
                 <br />
                 <br />
                 

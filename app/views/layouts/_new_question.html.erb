@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Contribute Your Command</h4>
+      </div>
+      <div class="modal-body">
+   <%= simple_form_for new_admin_question_path(@question) do |f| %>
+    <%= f.input :topic, :label => "Topic id", :placeholder => "bla" %>
+    <%= f.input :problem, :label => "Enter question here?" %>
+    <%= f.input :solution, :label => "Enter the right answer" %>
+	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit 'Create', :class => 'btn btn-danger' %>
+	  <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,47 +3,32 @@
 <div class="container">
     <div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a href="#dashboard" data-toggle="tab">Dashboard</a></li>
-            <li><a href="#questions" data-toggle="tab">Questions</a></li>
+            <li><a href="#dashboard" data-toggle="tab">Dashboard</a></li>
+            <li class="active"><a href="#questions" data-toggle="tab">Questions</a></li>
             <li><a href="#interviews" data-toggle="tab">Interviews</a></li>
             <li><a href="#users" data-toggle="tab">Users</a></li>
         </ul>
 
         <div id="my-tab-content" class="tab-content">
-            <div class="tab-pane active" id="dashboard">
+            <div class="tab-pane" id="dashboard">
                 <h1>Dashboard</h1>
                 
             </div>
-            <div class="tab-pane" id="questions">
-                <br/>
-                <%= @questions.inspect %>
-<!--                 <div class="panel panel-default span8">
-                    <div class="panel-heading">Panel heading</div>
+            <div class="tab-pane active" id="questions">
+                <br />
+                    <button type="button" class="btn btn-danger">New question</button>
+                <br />
+                <br />
+                
+                <% @topics.each do |topic| %>
+                    <h3><%= topic.title %></h3><br/>
+                    <% topic.questions.each_with_index do |question, i| %>
+                        <h4><%= i+1 %> <%= question.problem %></h4> 
+                        <%= question.solution %>
+                    <% end %>
+                <% end %>
 
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <td>Topic</td>
-                                <td>Question</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        
-                    </table>
-                </div>     -->
+                
             </div>
 
             <div class="tab-pane" id="interviews">

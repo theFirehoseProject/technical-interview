@@ -7,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">Contribute Your Command</h4>
       </div>
       <div class="modal-body">
-   <%= simple_form_for new_admin_question_path(@question) do |f| %>
+   <%= simple_form_for @question, :url => admin_questions_path do |f| %>
     <%= f.input :topic, :label => "Topic id", :placeholder => "bla" %>
     <%= f.input :problem, :label => "Enter question here?" %>
     <%= f.input :solution, :label => "Enter the right answer" %>

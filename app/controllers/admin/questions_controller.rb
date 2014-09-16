@@ -3,10 +3,11 @@ class Admin::QuestionsController < ApplicationController
 	end
 
 	def create
-		@question = Question.create(question_params)
+		@question = Question.new(question_params)
    		if @question.invalid?
-      		flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
+      		flash[:alert] = '<strong>Could not save</strong> the data you entered is invalid.'
     	end
+    @question.save
 		redirect_to admin_dashboard_path
 	end
 

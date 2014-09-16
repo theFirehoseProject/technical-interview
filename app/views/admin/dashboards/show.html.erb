@@ -42,6 +42,10 @@
             </div>
             <div class="tab-pane" id="users">
                 <h1>Users</h1>
+                <% @users.each_with_index do |user, i| %>
+                    <%= user.email %> - 
+                    <% i %><br />
+                <% end %>
                 
             </div>
         </div>

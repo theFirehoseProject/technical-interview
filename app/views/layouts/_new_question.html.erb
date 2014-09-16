@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body">
    <%= simple_form_for @question, :url => admin_questions_path do |f| %>
-    <%= f.input :topic, :label => "Topic id", :placeholder => "bla" %>
+    <%= f.input :topic_id, :label => "Topic id", :placeholder => "bla" %>
     <%= f.input :problem, :label => "Enter question here?" %>
     <%= f.input :solution, :label => "Enter the right answer" %>
 	</div>

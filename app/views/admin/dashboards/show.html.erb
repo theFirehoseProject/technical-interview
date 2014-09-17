@@ -12,16 +12,15 @@
         <div id="my-tab-content" class="tab-content">
             <div class="tab-pane" id="dashboard">
                 <h1>Dashboard</h1>
-                
             </div>
+
             <div class="tab-pane active" id="questions">
                 <br />
-        
-                    <button type="button" class="btn btn-danger", >
-                        <%= link_to 'New question', '#', :data => {:toggle => 'modal', :target => '#myModal'} %>
-                    </button>
+                <a href="#" class="btn btn-danger"
+                    data-toggle="modal"
+                    data-target="#questionModal">New question</a>
 
-                    <%= render :partial => "layouts/new_question" %>
+                <%= render :partial => "layouts/new_question" %>
                 <br />
                 <br />
                 
@@ -33,7 +32,6 @@
                     <% end %>
                 <% end %>
 
-                
             </div>
 
             <div class="tab-pane" id="interviews">

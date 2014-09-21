@@ -3,45 +3,35 @@
 <div class="container">
     <div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a href="#dashboard" data-toggle="tab">Dashboard</a></li>
-            <li><a href="#questions" data-toggle="tab">Questions</a></li>
+            <li><a href="#dashboard" data-toggle="tab">Dashboard</a></li>
+            <li class="active"><a href="#questions" data-toggle="tab">Questions</a></li>
             <li><a href="#interviews" data-toggle="tab">Interviews</a></li>
             <li><a href="#users" data-toggle="tab">Users</a></li>
         </ul>
 
         <div id="my-tab-content" class="tab-content">
-            <div class="tab-pane active" id="dashboard">
+            <div class="tab-pane" id="dashboard">
                 <h1>Dashboard</h1>
-                
             </div>
-            <div class="tab-pane" id="questions">
-                <br/>
-                <div class="panel panel-default span8">
-                    <div class="panel-heading">Panel heading</div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <td>Topic</td>
-                                <td>Question</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        
-                    </table>
-                </div>    
+
+            <div class="tab-pane active" id="questions">
+                <br />
+                <a href="#" class="btn btn-danger"
+                    data-toggle="modal"
+                    data-target="#questionModal">New question</a>
+
+                <%= render :partial => "layouts/new_question" %>
+                <br />
+                <br />
+                
+                <% @topics.each do |topic| %>
+                    <h3><%= topic.title %></h3><br/>
+                    <% topic.questions.each_with_index do |question, i| %>
+                        <h4><%= i+1 %> <%= question.problem %></h4> 
+                        <%= question.solution %>
+                    <% end %>
+                <% end %>
+
             </div>
 
             <div class="tab-pane" id="interviews">
@@ -50,6 +40,10 @@
             </div>
             <div class="tab-pane" id="users">
                 <h1>Users</h1>
+                <% @users.each_with_index do |user, i| %>
+                    <%= user.email %> - 
+                    <% i %><br />
+                <% end %>
                 
             </div>
         </div>

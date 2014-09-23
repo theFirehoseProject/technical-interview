@@ -1,0 +1,13 @@
+<style type="text/css">
+.userinfo {
+  padding-top: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+</style>
+
+<div class="userinfo col-xs-5 col-xs-offset-1">
+<h1> Hello, <%= @user.email %></h1>
+<h2> Member since: <%= @user.created_at %> </h2>
+<h2> User IP: <%= @user.current_sign_in_ip %> </h2>
+</div>

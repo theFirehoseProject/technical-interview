@@ -7,16 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 
-
-<script type="text/javascript">
-$(document).ready(function(){
-  setTimeout(function(){
-    $('#flash').slideUp();
-  }, 5000);
- })
-</script>
-
-
 <body>
 
 
@@ -25,15 +15,21 @@ $(document).ready(function(){
 	<div id="container">
 		<%= render :partial => "layouts/header" %>
 
-<div id="flash">
-  <a class="close" data-dismiss="alert">&#215;</a>
-  <% content_tag :div, :id => "alert alert-info" %>
 
 		<% if notice.present? %>
-		  <p class="alert alert-info"><%= notice %></p>
+      <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <%= notice %>
+    </div>
+		  <!-- <p class="alert alert-info"><%= notice %></p> -->
 		<% end %>
 		<% if alert.present? %>
-		  <p class="alert alert-danger"><%= alert %></p>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <%= alert %>
+    </div>
+      <!-- <%= alert_box alert, dismissible: true %>
+		  <p class="alert alert-danger"><%= alert %></p> -->
 		<% end %>
   </div>
 	</div>

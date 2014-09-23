@@ -29,6 +29,9 @@ GEM
     autoprefixer-rails (2.2.0.20140804)
       execjs
     bcrypt (3.1.7)
+    bh (1.0.0)
+      actionpack
+      activesupport
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
     builder (3.1.4)
@@ -125,6 +128,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bh (~> 1.0)
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   devise (>= 3.2.4)

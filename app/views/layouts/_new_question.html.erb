@@ -1,0 +1,28 @@
+<!-- Modal -->
+<div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add new question</h4>
+      </div>
+      <div class="modal-body row">
+        <%= simple_form_for @question, :url => admin_questions_path do |f| %>
+        <div class="col-sm-2">Topic</div>
+        <div class="col-sm-10"><%= f.input_field :topic_id, :label => "Topic id", :placeholder => "bla", :as => :select, :collection => Topic.collection_items %></div><br>
+          
+        <div class="col-sm-2">Question</div>
+        <div class="col-sm-10"><%= f.input_field :problem, :label => "Enter question here?" %></div><br>
+    
+        <div class="col-sm-2">Answer</div>
+        <div class="col-sm-10"><%= f.input_field :solution, :label => "Enter the right answer" %></div>
+	   </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <%= f.submit 'Add', :class => 'btn btn-danger' %>
+	  <% end %>
+      </div>
+    </div>
+  </div>
+</div>

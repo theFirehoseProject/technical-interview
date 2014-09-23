@@ -9,7 +9,8 @@
       <div class="modal-body row">
         <%= simple_form_for @interview, :url => admin_interviews_path do |f| %>
         <% @topics.each do |topic| %>
-           <%= topic.title %> <%= f.input :question_id, :collection => topic.questions, :label_method => :problem, :value_method => :id, :label => "Question", :include_blank => false %> 
+           <%= topic.title %> <br />
+           <%= f.input @questions, :collection => topic.questions, :label_method => :problem, :value_method => :id, :label => "Select question", :include_blank => false %> 
         <% end %>
           
 	   </div>

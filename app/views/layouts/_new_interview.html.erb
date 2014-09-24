@@ -4,11 +4,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Add new question</h4>
+        <h4 class="modal-title" id="myModalLabel">Add new interview</h4>
       </div>
       <div class="modal-body row">
         <%= simple_form_for @interview, :url => admin_interviews_path do |f| %>
-       <%= f.association :questions, label_method: :problem, value_method: :id, include_blank: false %>   
+        <% @topics.each do |topic| %>
+            <%= f.association :questions, :collection => topic.questions, as: :select, :label_method => :problem, :value_method => :id, :label => "Select question for #{topic.title}: ", :include_blank => false%>
+            <% end%>
+        
 	   </div>
 
       <div class="modal-footer">

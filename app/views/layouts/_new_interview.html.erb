@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body row">
         <%= simple_form_for @interview, :url => admin_interviews_path do |f| %>
-       <%= f.association :question_ids, as: :select %>   
+       <%= f.association :questions, label_method: :problem, value_method: :id, include_blank: false %>   
 	   </div>
 
       <div class="modal-footer">

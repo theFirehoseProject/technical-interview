@@ -10,7 +10,6 @@ class Admin::InterviewsController < ApplicationController
       		flash[:alert] = '<strong>Could not save</strong> the data you entered is invalid.'
     	end
     @questions = Question.all
-    @interview.questions = @questions
     @interview.save
 
 		redirect_to admin_dashboard_path

@@ -20,4 +20,10 @@ class Admin::QuestionsController < ApplicationController
 	def  question_params
 		params.require(:question).permit(:problem,:solution,:topic_id)
 	end
+
+	 def self.collection_items
+		Question.all.collect do |question|
+			[question.problem, question.id]
+		end
+	end
 end

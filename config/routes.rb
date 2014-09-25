@@ -10,6 +10,8 @@ Examgoose::Application.routes.draw do
 
   resources :optins
 
+  resources :interviews, :only => :show
+
   namespace :admin do
     resources :interviews
     resources :questions

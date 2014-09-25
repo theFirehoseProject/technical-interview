@@ -3,7 +3,12 @@ class InterviewsController < ApplicationController
 
 
   def claim
-    current_user.interviews<<Interview.first
-    redirect_to root_path
+    claimed_interview = Interview.first
+    current_user.interviews<<claimed_interview
+    redirect_to interview_path(claimed_interview)
+  end
+
+  def show
+
   end
 end

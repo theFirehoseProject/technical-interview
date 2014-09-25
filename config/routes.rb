@@ -4,7 +4,7 @@ Examgoose::Application.routes.draw do
   root 'static_pages#index'
   get 'welcome' => 'static_pages#welcome'
   get 'thankyou' => 'static_pages#thankyou'
-  
+  post 'interviews/claim' => 'interviews#claim'
 
   resources :users, :only => :show
 

@@ -8,10 +8,12 @@
       </div>
       <div class="modal-body row">
         <%= simple_form_for @interview, :url => admin_interviews_path do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
         <% @topics.each do |topic| %>
             <%= f.association :questions, :collection => topic.questions, as: :select, :label_method => :problem, :value_method => :id, :label => "Select question for #{topic.title}: ", :include_blank => false%>
             <% end%>
-        
+
 	   </div>
 
       <div class="modal-footer">

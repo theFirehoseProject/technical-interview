@@ -4,7 +4,7 @@ class Admin::DashboardsController < ApplicationController
 		@questions = Question.all
 		@question = Question.new
 
-		@intervies = Interview.all
+		@interviews = Interview.all
 		@interview = Interview.new
 		
 		@topics = Topic.all

@@ -44,6 +44,12 @@
                 <br />
                 <br />
                 
+                <% @interviews.each_with_index do |interview, i| %>
+                    <h3>Interview Nr. <%= i+1 %></h3><br/>
+                    <%  interview.questions.each do |question| %>
+                        <%= question.problem %> <br/>
+                    <% end %>
+                <% end %>
 
             </div>
 

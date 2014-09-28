@@ -11,18 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919110008) do
+ActiveRecord::Schema.define(version: 20140925230458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "interviews", force: true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "question_id"
   end
+
+  create_table "interviews_questions", id: false, force: true do |t|
+    t.integer "interview_id"
+    t.integer "question_id"
+  end
+
+  create_table "interviews_users", id: false, force: true do |t|
+    t.integer "interview_id"
+    t.integer "user_id"
+  end
+
+  add_index "interviews_users", ["interview_id", "user_id"], name: "index_interviews_users_on_interview_id_and_user_id", using: :btree
+  add_index "interviews_users", ["user_id"], name: "index_interviews_users_on_user_id", using: :btree
 
   create_table "optins", force: true do |t|
     t.string "name"

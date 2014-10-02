@@ -9,6 +9,6 @@ class InterviewsController < ApplicationController
   end
 
   def show
-
+    @interview = Interview.find(params[:id])
   end
 end

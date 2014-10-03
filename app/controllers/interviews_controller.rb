@@ -1,5 +1,6 @@
 class InterviewsController < ApplicationController
   before_action :authenticate_user!
+  before_action :unless_interview_claimed, :only => :show
 
 
   def claim
@@ -9,6 +10,22 @@ class InterviewsController < ApplicationController
   end
 
   def show
-    @interview = Interview.find(params[:id])
+
   end
+
+  private
+
+  helper_method :current_interview
+
+  def current_interview
+    @current_interview ||= Interview.find(params[:id])
+  end
+
+  def unless_interview_claimed
+    unless current_interview.claimed? current_user
+      render :text => "You must claim this interview before viewing it.",
+      :status => :forbidden
+    end
+  end
+
 end

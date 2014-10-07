@@ -12,5 +12,11 @@ class StaticPagesController < ApplicationController
   def welcome
 
   end
-  
+
+  def thankyou
+    if current_user.present?
+    redirect_to welcome_path
+    end
+  end
+
 end

@@ -9,6 +9,6 @@ class InterviewsController < ApplicationController
   end
 
   def show
-
+    @interviews = current_user.interviews
   end
 end

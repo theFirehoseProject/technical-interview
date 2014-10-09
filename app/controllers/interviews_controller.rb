@@ -4,9 +4,13 @@ class InterviewsController < ApplicationController
 
 
   def claim
-    claimed_interview = Interview.first
-    current_user.interviews<<claimed_interview
-    redirect_to interview_path(claimed_interview)
+    claimed_interview = current_user.unclaimed_interview
+    if claimed_interview.nil? 
+      redirect_to root_path,  :alert => 'You already have all the interviews'
+    else
+     current_user.interviews<<claimed_interview
+     redirect_to interview_path(claimed_interview)
+    end
   end
 
   def show

@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def welcome
-
+    @unclaimed = current_user.unclaimed_interview
   end
 
   def thankyou

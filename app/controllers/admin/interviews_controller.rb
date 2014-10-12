@@ -7,7 +7,7 @@ class Admin::InterviewsController < ApplicationController
   def create
 		@interview = Interview.new(interview_params)
    		if @interview.invalid?
-      		flash[:alert] = '<strong>Could not save</strong> the data you entered is invalid.'
+      		flash[:alert] = 'Could not save the data you entered is invalid.'
     	end
     @questions = Question.all
     @interview.save

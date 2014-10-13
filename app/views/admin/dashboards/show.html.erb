@@ -23,11 +23,11 @@
                 <%= render :partial => "layouts/new_question" %>
                 <br />
                 <br />
-                
+
                 <% @topics.each do |topic| %>
                     <h3><%= topic.title %></h3><br/>
                     <% topic.questions.each_with_index do |question, i| %>
-                        <h4><%= i+1 %> <%= question.problem %></h4> 
+                        <h4><%= i+1 %> <%= question.problem %></h4>
                         <%= question.solution %>
                     <% end %>
                 <% end %>
@@ -43,9 +43,9 @@
                 <%= render :partial => "layouts/new_interview" %>
                 <br />
                 <br />
-                
+
                 <% @interviews.each_with_index do |interview, i| %>
-                    <h3>Interview Nr. <%= i+1 %></h3><br/>
+                    <h3>Interview Nr. <%= i+1 %> </h3><br/>
                     <%  interview.questions.each do |question| %>
                         <%= question.problem %> <br/>
                     <% end %>
@@ -55,15 +55,15 @@
 
             <div class="tab-pane" id="interviews">
 
-                
+
             </div>
             <div class="tab-pane" id="users">
                 <h1>Users</h1>
                 <% @users.each_with_index do |user, i| %>
-                    <%= user.email %> - 
+                    <%= user.email %> -
                     <% i %><br />
                 <% end %>
-                
+
             </div>
         </div>
     </div>

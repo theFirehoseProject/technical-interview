@@ -1,7 +1,69 @@
-<h2><%= current_interview.title %></h2>
-<p><%= current_interview.description %></p>
+<style type="text/css">
 
-<% current_interview.questions.each do |question| %>
-	<p> <%= question.problem %> <br>
-	<%= question.solution %><br></p>
+.titles{
+	font-family: 'Lato', sans-serif;
+	font-size: 35px;
+	padding: 10px 50px 10px 50px;
+}
+
+.contained{
+	padding: 10px 10px 20px 10px;
+	font-family: 'Lato', sans-serif;
+}
+
+.contained h2{
+	font-size: 25px;
+	padding-bottom: 15px;
+	font-weight: 10px;
+}
+
+.contained h3{
+	font-size: 18px;
+}
+
+.question{
+	top: 30px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.top-wrap{
+	border: 1px solid red;
+	width: 100%;
+}
+
+.boxed{
+	-moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+	-webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+	box-shadow: 1px 1px 2px 0 #d0d0d0;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+}
+
+</style>
+	<div class="titles">
+	<h2><%= current_interview.title %></h2>
+	<h3><%= current_interview.description %></h3>
+</div>
+
+<% current_interview.questions.each do |question, i| %>
+<div class="contained col-md-12">
+
+	<div class="question boxed col-xs-12">
+		<div class="top-wrap">
+		<h2>Question</h2>
+		</div>
+		<h3><%= question.problem %> </h3><br>
+			<div class="answer boxed col-xs-12">
+				<div class="top-wrap">
+					<h2>Answer</h2>
+				</div>
+				<div class="answer">
+				<h3><%= question.solution %></h3><br>
+				</div>
+			</div>
+	</div>
+</div>
 <% end %>

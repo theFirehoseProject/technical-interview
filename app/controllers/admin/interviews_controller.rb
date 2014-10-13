@@ -18,6 +18,6 @@ class Admin::InterviewsController < ApplicationController
 	private
 
 	def  interview_params
-		params.require(:interview).permit(:question_ids => [])
+		params.require(:interview).permit(:title, :description, :question_ids => [])
 	end
 end

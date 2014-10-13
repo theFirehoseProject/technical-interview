@@ -1,0 +1,14 @@
+<%= form_tag charges_path do %>
+  <div class="col-xs-2 col-xs-offset-5 charge-box text-center">
+      <article>
+      <label class="amount">
+        <span>Amount: $5.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key='<%= Rails.configuration.stripe[:publishable_key] %>'
+            data-description="Sign up for one new course."
+            data-amount="500"></script>
+  </div>
+<% end %>

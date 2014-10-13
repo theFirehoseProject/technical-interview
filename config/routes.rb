@@ -12,6 +12,8 @@ Examgoose::Application.routes.draw do
 
   resources :interviews, :only => :show
 
+  resources :charges
+
   namespace :admin do
     resources :interviews
     resources :questions

@@ -35,6 +35,12 @@ gem 'jbuilder', '~> 1.2'
 # Bootstrap helper for dismissable notices and more bootstrap functionality
 gem 'bh', '~> 1.0'
 
+# Stripe for payments
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+# Figaro for stripe API key
+gem 'figaro', ">= 1.0.0"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

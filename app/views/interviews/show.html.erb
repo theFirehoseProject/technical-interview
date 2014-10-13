@@ -1,1 +1,7 @@
-<h2>Interview!</h2>
+<h2><%= current_interview.title %></h2>
+<p><%= current_interview.description %></p>
+
+<% current_interview.questions.each do |question| %>
+	<p> <%= question.problem %> <br>
+	<%= question.solution %><br></p>
+<% end %>

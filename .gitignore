@@ -20,5 +20,6 @@
 .DS_Store
 *.DS_Store
 
-# Ignore application configuration
+
+# Ignore application.yml, hides API keys for Stripe
 /config/application.yml

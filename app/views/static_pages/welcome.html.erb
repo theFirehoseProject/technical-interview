@@ -10,5 +10,9 @@
 </div>
 <br><br><br><br>
 <div class="courses col-xs-4 col-xs-offset-4 text-center">
+  <% if @unclaimed.nil? %>
+	<h4><%= "Sorry, no more interviews.  You got 'em all!" %></h4>
+  <% else %>
     <h3><%= link_to "Give me one for free", interviews_claim_path, :method => :post %></h3>
+  <% end %>
 </div>

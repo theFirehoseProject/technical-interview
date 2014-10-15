@@ -61,7 +61,12 @@
                 <h1>Users</h1>
                 <% @users.each_with_index do |user, i| %>
                     <%= user.email %> - 
-                    <% i %><br />
+                    <% i %>
+                  <!--   <% form_for user, :method => :put do |f| %>
+                        <%= f.hidden_field :firehose, :value => true %>
+                        <%= f.submit "Firehoser?" %>
+                    <% end %> -->
+                    <%= link_to 'Firehoser?', "#", :class => 'btn btn-primary btn-sm' %><br />
                 <% end %>
                 
             </div>

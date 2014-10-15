@@ -7,7 +7,7 @@ Examgoose::Application.routes.draw do
   get 'privacy' => 'static_pages#privacy'
   post 'interviews/claim' => 'interviews#claim'
 
-  resources :users, :only => :show
+  resources :users, :only => [:show, :update]
 
   resources :optins
 

@@ -11,12 +11,11 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		#if @user.update_attributes(:firehose => true)
 		if @user.update_attributes(:firehose => params[:firehose])
-			flash[:notice] = "Update successful!"
+			flash[:alert] = "Update successful!"
 			redirect_to root_path
 		else
-			flash[:notice] = "Didn't work"
+			flash[:alert] = "Didn't work"
 			redirect_to root_path
 		end
 	end

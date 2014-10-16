@@ -19,6 +19,7 @@ Examgoose::Application.routes.draw do
     resources :interviews
     resources :questions
     resource :dashboard, :only => :show
+    resource :users, :only => :show
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

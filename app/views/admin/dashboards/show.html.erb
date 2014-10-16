@@ -62,11 +62,11 @@
                 <% @users.each_with_index do |user, i| %>
                     <%= user.email %> - 
                     <% i %>
-                  <!--   <% form_for user, :method => :put do |f| %>
-                        <%= f.hidden_field :firehose, :value => true %>
-                        <%= f.submit "Firehoser?" %>
-                    <% end %> -->
-                    <%= link_to 'Firehoser?', "#", :class => 'btn btn-primary btn-sm' %><br />
+                    <% if !user.firehose? %>
+                        <%= link_to 'Add as FireHose Member', user_path(user, :firehose => true), :class => 'btn btn-primary btn-sm', :method => :put %><br />
+                    <% else %>
+                        <button type="button" class="btn btn-sm btn-primary" disabled="disabled">FireHoser</button>
+                    <% end %>
                 <% end %>
                 
             </div>

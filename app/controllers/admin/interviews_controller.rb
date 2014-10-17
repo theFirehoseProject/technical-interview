@@ -1,4 +1,4 @@
-class Admin::InterviewsController < ApplicationController
+class Admin::InterviewsController < AdminController
 
   def index
     @interviews = Interview.all

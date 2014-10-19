@@ -9,6 +9,10 @@ class Admin::DashboardsController < ApplicationController
 		
 		@topics = Topic.all
 		@users = User.all
+
+
 	end
+
+	
 
 end

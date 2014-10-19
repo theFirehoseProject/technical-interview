@@ -7,7 +7,7 @@ Examgoose::Application.routes.draw do
   get 'privacy' => 'static_pages#privacy'
   post 'interviews/claim' => 'interviews#claim'
 
-  resources :users, :only => :show
+  resources :users, :only => [:show, :update]
 
   resources :optins
 
@@ -19,6 +19,7 @@ Examgoose::Application.routes.draw do
     resources :interviews
     resources :questions
     resource :dashboard, :only => :show
+    resource :users, :only => :show
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

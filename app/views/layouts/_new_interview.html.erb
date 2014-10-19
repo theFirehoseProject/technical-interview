@@ -12,14 +12,13 @@
         <%= f.input :description %>
         <% @topics.each do |topic| %>
             <%= f.association :questions, :collection => topic.questions, as: :select, :label_method => :problem, :value_method => :id, :label => "Select question for #{topic.title}: ", :include_blank => false%>
-            <% end%>
-
+            <% end %>
 	   </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <%= f.submit 'Add', :class => 'btn btn-danger' %>
-	  <% end %>
+          <%= f.submit 'Add', :class => 'btn btn-danger' %>
+	         <% end %>
       </div>
     </div>
   </div>

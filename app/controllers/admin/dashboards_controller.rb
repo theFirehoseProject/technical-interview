@@ -7,34 +7,11 @@ class Admin::DashboardsController < AdminController
 
 		@interviews = Interview.all
 		@interview = Interview.new
-		
+
 		@topics = Topic.all
 		@users = User.all
+
+
 	end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 end

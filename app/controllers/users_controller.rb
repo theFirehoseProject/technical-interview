@@ -1,12 +1,32 @@
 class UsersController < ApplicationController
 
-  def show			#add show action, as called in routes
+  	def show			#add show action, as called in routes
 		@user = User.find(params[:id])
-    @user_email = current_user.email
+	    @user_email = current_user.email
 	end
 
 	def index
 		@users = User.all
 	end
+
+	def update
+		@user = User.find(params[:id])
+		if @user.update_attributes(:firehose => params[:firehose])
+			flash[:alert] = "Firehoser given all interviews!"
+			@user.interviews << Interview.all
+			redirect_to admin_dashboard_path
+
+		else
+			flash[:alert] = "Didn't work"
+			redirect_to admin_dashboard_path
+		end
+	end
+
+	
+
+		
+		
+	
+
 
 end

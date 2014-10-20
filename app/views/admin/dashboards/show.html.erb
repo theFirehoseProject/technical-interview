@@ -60,8 +60,19 @@
             <div class="tab-pane" id="users">
                 <h1>Users</h1>
                 <% @users.each_with_index do |user, i| %>
-                    <%= user.email %> - 
-                    <% i %><br />
+                    <%= link_to user.email, user_path(user) %>
+                    <% i %>
+                     <% user.interviews.each do |int| %>
+                    <%= int.title %>
+                    <br/>
+                    <% end %> 
+                    <% if !user.firehose? %>
+                        <%= link_to 'Add as FireHose Member', user_path(user, :firehose => true), :class => 'btn btn-primary btn-sm', :method => :put %><br />
+                    <% else %>
+                        <button type="button" class="btn btn-sm btn-primary" disabled="disabled">FireHoser</button><br />
+                    <% end %>
+                    <br />
+
                 <% end %>
                 
             </div>

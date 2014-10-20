@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 		unclaimed_interviews.first
 	end
 
+	
 
 
 end

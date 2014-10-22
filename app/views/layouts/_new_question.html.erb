@@ -10,12 +10,12 @@
         <%= simple_form_for @question, :url => admin_questions_path do |f| %>
         <div class="col-sm-2">Topic</div>
         <div class="col-sm-10"><%= f.input_field :topic_id, :label => "Topic id", :placeholder => "bla", :as => :select, :collection => Topic.collection_items %></div><br>
-          
+
         <div class="col-sm-2">Question</div>
-        <div class="col-sm-10"><%= f.input_field :problem, :label => "Enter question here?" %></div><br>
-    
+        <div class="col-sm-10"><%= f.input :problem, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} } %></div>
+
         <div class="col-sm-2">Answer</div>
-        <div class="col-sm-10"><%= f.input_field :solution, :label => "Enter the right answer" %></div>
+        <div class="col-sm-10"><%= f.input :solution, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Mini'} } %></div>
 	   </div>
 
       <div class="modal-footer">

@@ -41,6 +41,11 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Figaro for stripe API key
 gem 'figaro', ">= 1.0.0"
 
+# wysiwyg editor, carrierwave for image storage
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

@@ -6,6 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+
 module Examgoose
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -20,6 +21,7 @@ module Examgoose
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.enforce_available_locales = false
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
   end
 end

@@ -13,6 +13,8 @@ class InterviewsController < ApplicationController
     end
   end
 
+  
+
   def show
     @interviews = current_user.interviews
   end

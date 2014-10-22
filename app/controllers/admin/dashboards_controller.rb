@@ -1,4 +1,5 @@
-class Admin::DashboardsController < ApplicationController
+class Admin::DashboardsController < AdminController
+
 
 	def show
 		@questions = Question.all
@@ -6,13 +7,11 @@ class Admin::DashboardsController < ApplicationController
 
 		@interviews = Interview.all
 		@interview = Interview.new
-		
+
 		@topics = Topic.all
 		@users = User.all
 
 
 	end
-
-	
 
 end

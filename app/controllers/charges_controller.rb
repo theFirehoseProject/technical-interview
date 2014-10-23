@@ -1,29 +1,33 @@
 class ChargesController < ApplicationController
+  before_action :authenticate_user!
 
-  def new
-    
-  end
 
   def create
+
     # Amount in cents
     @amount = 500
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => current_user.email,
       :card  => params[:stripeToken]
     )
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :description => 'Exam Goose',
       :currency    => 'usd'
     )
 
-  rescue Stripe::CardError => e
+    @current_interview ||= Interview.find(params[:interview_id])
+    current_user.interviews << @current_interview
+    redirect_to interviews_path, alert: "Thanks! You now have access to the selected interview."
+
+    rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to charges_path
+    redirect_to interviews_path
   end
+
 
 end
 

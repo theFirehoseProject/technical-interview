@@ -11,9 +11,9 @@ Examgoose::Application.routes.draw do
 
   resources :optins
 
-  resources :interviews, :only => :show
-
-  resources :charges
+  resources :interviews, :only => [:index, :show] do
+    resources :charges, :only => [:new, :create]
+  end
 
   namespace :admin do
     resources :interviews

@@ -1,5 +1,4 @@
-@import "bootstrap";
-@import "bootstrap-sprockets";
+
 @import url(http://fonts.googleapis.com/css?family=Raleway:700);
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
@@ -13,7 +12,6 @@ main {
 }
 
 body {
-  background: url('/assets/notebook.png');
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
@@ -26,7 +24,8 @@ body {
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   top: 20px;
-  margin:20px 0px 15px 0px;
+  /* margin:20px 0px 15px 0px; */
+  margin-top: 20px;
   padding: 20px;
 }
 
@@ -70,4 +69,12 @@ input {
 
 #thanksimg {
   max-width:80px;
+}
+
+.alert {
+  margin-bottom: 0;
+}
+
+span.pricing {
+font-size: 14px;
 }

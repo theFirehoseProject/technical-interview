@@ -4,8 +4,10 @@ class StaticPagesController < ApplicationController
   def index
     if current_user.present? && current_user.admin?
       redirect_to admin_dashboard_path
-      elsif current_user.present?
+    elsif newuser
       redirect_to welcome_path
+    elsif current_user
+      redirect_to interviews_path
     end
   end
 
@@ -20,6 +22,12 @@ class StaticPagesController < ApplicationController
   end
 
   def privacy
+  end
+
+  private
+
+  def newuser
+    current_user && current_user.interviews.count == 0
   end
   
 

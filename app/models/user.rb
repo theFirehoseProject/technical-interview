@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 		my_interviews = self.interviews
 		all_interviews = Interview.all
 		unclaimed_interviews = all_interviews - my_interviews
-		unclaimed_interviews.first
+		unclaimed_interviews.shuffle.first
 	end
 
 	

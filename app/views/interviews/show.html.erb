@@ -1,17 +1,50 @@
+<style type="text/css">
+
+.int-title h2{
+	font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+.interviewbox{
+	padding-top: 30px;
+}
+.set{
+	border: 1px solid blue;
+	padding: 0px 0px 10px 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.set p{
+	padding: 5px 5px 0px 5px;
+}
+.q-box{
+	border: 2px solid red;
+	font:
+}
+
+a-box{
+
+}
+a-box a{
+	padding: 5px 5px 0px 5px;
+}
+
+</style>
+<div class="int-title col-xs-10 col-xs-offset-1">
 <h2><%= current_interview.title %></h2>
 <p><%= current_interview.description %></p>
+</div>
 
-
+<div class="interviewbox">
 <% @interviews.each do |question| %>
-	<%= div_for(question, class: "set") do %>
-		<%= div_for(question, class: "intbox") do %>
-			<%= question.problem %>
+	<%= div_for(question, class: "set col-xs-10 col-xs-offset-1") do %>
+		<%= div_for(question, class: "q-box") do %>
+			<p><%= question.problem %></p>
 		<% end %>
-		<%= div_for(question, class: "ansbox") do %>
-			<%= question.solution %>
+		<%= div_for(question, class: "a-box") do %>
+			<p><%= question.solution %></p>
 		<% end %>
 	<% end %>
 <% end %>
+</div>
 
 
 

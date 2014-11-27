@@ -49,30 +49,15 @@ a-box a{
 </div>
 
 
-
-<!--<% current_interview.questions.each do |question| %>
-	<p> <%= question.problem %> <br>
-	<%= question.solution %><br></p>
+<div class="interviewbox">
+<% @interviews.each do |question| %>
+	<%= div_for(question, class: "set col-xs-10 col-xs-offset-1") do %>
+			<div id="question">
+				<p><%= question.problem %></p>
+			</div>
+		<%= div_for(question, class: "a-box") do %>
+			<p><%= question.solution %></p>
+		<% end %>
+	<% end %>
 <% end %>
-
-<% current_interview.questions.each do |question| %>
-<div class="panel-heading">
-	<h4 class="panel-title">
-		<a data-toggle="collapse" data-parent="#accordion" rel='nofollow' target='_blank' href="#collapseTwo">
-				<%= question.problem %>
-		</a>
-	</h4>
 </div>
-<div id="collapseTwo" class="panel-collapse collapse">
-	<div class="panel-body">
-		<%= question.solution %>
-	</div>
-</div>
-
-
-<% end %>
-
-<%= div_for @interview, :class => "intbox" do %>
-	<p> <%= question.problem %> <br>
-	<%= question.solution %><br></p>
-<% end %> -->

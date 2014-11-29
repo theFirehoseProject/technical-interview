@@ -65,7 +65,9 @@
             </div>
             <div class="tab-pane" id="users">
                 <h1>Users</h1>
+                <div class="admin-box">
                 <% @users.each_with_index do |user, i| %>
+                <div class="admin-box">
                     <%= link_to user.email, user_path(user) %>
                     <% i %>
                      <% user.interviews.each do |int| %>
@@ -78,8 +80,9 @@
                         <button type="button" class="btn btn-sm btn-primary" disabled="disabled">FireHoser</button><br />
                     <% end %>
                     <br />
-
+                </div>
                 <% end %>
+              </div>
 
             </div>
         </div>

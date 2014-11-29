@@ -71,15 +71,22 @@ body {
 			</div>
 			<div class="modal-body">
 						<% @interviews.each do |question| %>
-							<div class="set col-xs-10 col-xs-offset-1">
-									<div class="question">
-										<p><%= question.problem %></p>
+							<div class="quiz-box col-xs-10 col-xs-offset-1">
+									<div class="set">
+										<p><strong> - <%= question.problem %></strong></p>
 									</div>
-									<div class="answer">
+									<div class="set">
 										<p><%= question.solution %></p>
 									</div>
 							</div>
 						<% end %>
+
+						<!-- 	quiz-box for title
+									interview-box container for question and answer
+									set container for question -->
+
+
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -98,9 +105,7 @@ body {
 <div class="interviewbox">
 <% @interviews.each do |question| %>
 	<div class="set col-xs-10 col-xs-offset-1">
-			<div id="question">
 				<p><%= question.problem %></p>
-			</div>
 	</div>
 <% end %><br><br>
 </div>

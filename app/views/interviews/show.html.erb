@@ -9,42 +9,54 @@ body {
 }
 
 .interviewbox{
-	padding-top: 50px;
-	margin-top: 20px;
-}
-.set{
-	border: 1px solid blue;
-	padding: 0px 0px 0px 0px;
+	padding-top: 20px;
 	margin-top: 10px;
-	margin-bottom: 10px;
+}
+
+.set{
+	border: 1px solid #ccc;
+	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+	padding: 5px 0px 5px 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 .set p{
-	padding: 5px 5px 0px 5px;
-}
-.question{
-	border: 2px solid blue;
-	font:
+	padding: 10px 5px 5px 10px;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
 }
 
-a-box{
-
-}
-a-box a{
-	padding: 5px 5px 0px 5px;
-}
-
-.booyah-box{
+.quiz-box{
 	-moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
 	-webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-	/*background-color: black;*/
 	box-shadow: 1px 1px 2px 0 #d0d0d0;
 	background: #fff;
 	border: 1px solid #ccc;
 	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-	top: 20px;
-	/* margin:20px 0px 15px 0px; */
-	margin-top: 20px;
-	padding: 20px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding: 10px;
+	font-family: 'Lato', sans-serif;
+}
+
+.quiz-box h2{
+	font-size: 35px;
+	font-weight: 300;
+}
+
+.quiz-box p{
+	font-size: 20px;
+}
+
+.question{
+	background: #fff;
+	border: 1px solid #ccc;
+	border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+.button{
+	padding-top: 25px;
 }
 
 </style>
@@ -55,7 +67,7 @@ a-box a{
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<h4 class="modal-title" id="myModalLabel">Questions and Answers</h4>
 			</div>
 			<div class="modal-body">
 						<% @interviews.each do |question| %>
@@ -77,29 +89,25 @@ a-box a{
 	</div>
 </div>
 
-
-
-
-
-<div class="booyah-box col-xs-10 col-xs-offset-1">
-<h2><%= current_interview.title %></h2>
+<div class="quiz-box col-xs-10 col-xs-offset-1">
+<h2><strong><%= current_interview.title %></strong></h2>
 <p><%= current_interview.description %></p>
-<p>Test</p>
 </div>
+<br><br><br>
 
 <div class="interviewbox">
 <% @interviews.each do |question| %>
-	<%= div_for(question, class: "set col-xs-10 col-xs-offset-1") do %>
+	<div class="set col-xs-10 col-xs-offset-1">
 			<div id="question">
 				<p><%= question.problem %></p>
 			</div>
-		<%= div_for(question, class: "a-box") do %>
-			<p><% question.solution %></p>
-		<% end %>
-	<% end %>
+	</div>
 <% end %><br><br>
+</div>
+
+<div class="button col-xs-2 col-xs-offset-5">
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	Show the answer
+<button type="button" class="btn btn-primary btn-lg text-center" data-toggle="modal" data-target="#myModal">
+	Show the answers
 </button>
 </div>

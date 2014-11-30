@@ -16,11 +16,12 @@ class InterviewsController < ApplicationController
      redirect_to interview_path(claimed_interview)
     end
   end
-  
+
 
   def show
   #  @interviews = current_user.interviews (a current user's interviews can be
   #  viewed on the index page or moved to the user's dashboard)
+  @interviews = current_interview.questions
   end
 
   private

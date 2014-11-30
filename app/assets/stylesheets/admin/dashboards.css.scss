@@ -1,3 +1,29 @@
 // Place all the styles related to the admin/dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.questionbox{
+background: #fff;
+border: 1px solid #ccc;
+border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+font-family: 'Fira Sans', sans-serif;
+padding: 10px 10px 10px 10px;
+}
+
+.questionbox h3{
+  font-size: 30px;
+  padding: 5px 5px 5px 10px;
+}
+
+.admin-box{
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+}

@@ -23,13 +23,17 @@
                 <%= render :partial => "layouts/new_question" %>
                 <br />
                 <br />
-                
+
                 <% @topics.each do |topic| %>
-                    <h3><%= topic.title %></h3><br/>
+                <div class="admin-box">
+                    <h3><strong><%= topic.title %></strong></h3><br/>
                     <% topic.questions.each_with_index do |question, i| %>
-                        <h4><%= i+1 %> <%= question.problem %></h4> 
-                        <%= question.solution %>
+                    <div class="questionbox">
+                        <h4> #<%= i+1 %> - <%= question.problem %></h4>
+                        <h5> <%= question.solution %></h5>
+                    </div>
                     <% end %>
+                  </div>
                 <% end %>
 
             </div>
@@ -43,38 +47,43 @@
                 <%= render :partial => "layouts/new_interview" %>
                 <br />
                 <br />
-                
+
                 <% @interviews.each_with_index do |interview, i| %>
+                <div class="admin-box">
                     <h3>Interview Nr. <%= i+1 %></h3><br/>
                     <%  interview.questions.each do |question| %>
                         <%= question.problem %> <br/>
                     <% end %>
+                  </div>
                 <% end %>
 
-            </div>
+</div>
 
             <div class="tab-pane" id="interviews">
 
-                
+
             </div>
             <div class="tab-pane" id="users">
                 <h1>Users</h1>
+                <div class="admin-box">
                 <% @users.each_with_index do |user, i| %>
+                <div class="admin-box">
                     <%= link_to user.email, user_path(user) %>
                     <% i %>
                      <% user.interviews.each do |int| %>
                     <%= int.title %>
                     <br/>
-                    <% end %> 
+                    <% end %>
                     <% if !user.firehose? %>
                         <%= link_to 'Add as FireHose Member', user_path(user, :firehose => true), :class => 'btn btn-primary btn-sm', :method => :put %><br />
                     <% else %>
                         <button type="button" class="btn btn-sm btn-primary" disabled="disabled">FireHoser</button><br />
                     <% end %>
                     <br />
-
+                </div>
                 <% end %>
-                
+              </div>
+
             </div>
         </div>
     </div>

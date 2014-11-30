@@ -6,8 +6,16 @@
 
 </style>
 
-<div class="userinfo col-xs-5 col-xs-offset-1">
-<h1> Hello, <%= @user.email %></h1>
-<h2> Member since: <%= @user.created_at %> </h2>
-<h2> User IP: <%= @user.current_sign_in_ip %> </h2>
+<div class="admin-box col-xs-5 col-xs-offset-1">
+<h3> Hello, <%= @user.email %></h3>
+<h4> Member since: <%= @user.created_at %> </h4>
+<h4> User IP: <%= @user.current_sign_in_ip %> </h4><br><br>
+
+<h4>Claimed Interviews:</h4>
+<% @user.interviews.each do |int| %>
+  <ul>
+    <li><%= int.title %></li>
+  </ul>
+<% end %>
+
 </div>
